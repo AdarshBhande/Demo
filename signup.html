@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Escorp Industries</title>
+  <title>Sign Up - Escorp Industries</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -172,7 +172,7 @@
       min-height: calc(100vh - 240px);
     }
 
-    .register-container {
+    .signup-container {
         background: rgba(22, 26, 45, 0.5);
         padding: 40px;
         border-radius: 15px;
@@ -196,13 +196,13 @@
       text-shadow: 0 0 10px rgba(92, 107, 192, 0.5);
     }
 
-    .register-form form {
+    .signup-form form {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .register-form input {
+    .signup-form input {
         width: 100%;
         padding: 15px;
         border-radius: 8px;
@@ -212,12 +212,12 @@
         font-size: 16px;
     }
     
-    .register-form input:focus {
+    .signup-form input:focus {
         outline: none;
         border-color: #7986cb;
     }
 
-    .register-form button {
+    .signup-form button {
         padding: 15px 30px;
         border: none;
         border-radius: 50px;
@@ -229,7 +229,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .register-form button:hover {
+    .signup-form button:hover {
         transform: translateY(-3px);
         box-shadow: 0 7px 20px rgba(92, 107, 192, 0.6);
     }
@@ -385,7 +385,7 @@
       .brand-name {
         font-size: 22px;
       }
-      . register-container {
+      .signup-container {
         padding: 25px;
       }
     }
@@ -426,12 +426,12 @@
 
   <!-- Main Content -->
   <main>
-    <div class="register-container">
+    <div class="signup-container">
         <div class="section-title">
             <h2>Create Account</h2>
         </div>
-        <div class="register-form">
-            <form id="register-form">
+        <div class="signup-form">
+            <form id="signup-form">
                 <input type="email" name="email" id="email" placeholder="Your Email" required>
                 <button type="submit">Send OTP</button>
             </form>
@@ -441,7 +441,7 @@
                 <input type="text" name="otp" placeholder="Enter OTP" required>
                 <input type="password" name="password" id="password" placeholder="Create Password" required>
                 <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
-                <button type="submit">Verify & Register</button>
+                <button type="submit">Verify & Sign Up</button>
             </form>
 
             <div id="form-status"></div>
@@ -521,13 +521,13 @@
     });
 
     // Sign Up Logic
-    const RegisterForm = document.getElementById(Register-form');
+    const signupForm = document.getElementById('signup-form');
     const verifySection = document.getElementById('verify-section');
     const formStatus = document.getElementById('form-status');
     const userEmailSpan = document.getElementById('user-email');
     const scriptURL = 'https://script.google.com/macros/s/AKfycby8OQm5TRya5zviGEACwIc11-gChwNLs7IrUBkIo61LCYzCaEOXz7XVIqpAtHpqUAx8/exec'; // IMPORTANT: Replace with your script URL
 
-    RegisterForm.addEventListener('submit', e => {
+    signupForm.addEventListener('submit', e => {
         e.preventDefault();
         const emailInput = document.getElementById('email');
         const submitButton = signupForm.querySelector('button');
@@ -546,7 +546,7 @@
                     formStatus.textContent = data.message;
                     formStatus.className = 'success';
                     userEmailSpan.textContent = emailInput.value;
-                    RegisterForm.style.display = 'none';
+                    signupForm.style.display = 'none';
                     verifySection.style.display = 'block';
                 } else {
                     throw new Error(data.error || 'Could not send OTP.');
@@ -602,10 +602,9 @@
             })
             .finally(() => {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Verify & Register';
+                submitButton.textContent = 'Verify & Sign Up';
             });
     });
   </script>
 </body>
 </html>
-
