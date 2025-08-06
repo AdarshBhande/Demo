@@ -777,9 +777,9 @@
                     cartDetailsText += `${item.name} (Qty: ${item.quantity}) - ${item.price}\n`;
                 });
                 
-                const platformFee = 50;
+            
                 const deliveryCharge = 150;
-                const grandTotal = total + platformFee + deliveryCharge;
+                const grandTotal = total + deliveryCharge;
                 const grandTotalText = `₹${grandTotal.toLocaleString('en-IN')}`;
 
                 // Generate a unique order ID
@@ -804,3 +804,4 @@
   </script>
 </body>
 </html>
+
